@@ -3,7 +3,7 @@
 Java console for create metrics and logging metrics dynamically on Google Cloud Platform
 
 
-####SETUP
+#### SETUP
 
 - You need Google Cloud SKD installed and configured with your domain.
 - JDK 1.8 required
