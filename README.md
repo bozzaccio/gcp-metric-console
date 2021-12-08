@@ -10,9 +10,10 @@ Java console for create metrics and logging metrics dynamically on Google Cloud 
 
 #### USAGE
 
+- Setup you're own properties on console.properties file
 - Write the json file with the metrics you want to create
 - Open the ConsoleRunner class and run it (or create .jar file and execute)
-- User the CLI for create/delete/get the metrics or log metrics
+- Use the CLI for create (with file)/delete/get the metrics or log metrics
 
 
 ### CLI
