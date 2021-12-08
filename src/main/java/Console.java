@@ -1,3 +1,4 @@
+import service.AlertService;
 import service.MetricService;
 
 import java.io.IOException;
@@ -7,6 +8,7 @@ import java.util.Properties;
 public final class Console {
 
     private final MetricService metricService;
+    private final AlertService alertService;
 
     public Console() throws IOException {
         Properties prop = new Properties();
@@ -16,6 +18,7 @@ public final class Console {
         prop.load(inputStream);
 
         metricService = new MetricService(prop.getProperty("gcp.domain"), prop.getProperty("gcp.project"));
+        alertService = new AlertService(prop.getProperty("gcp.project"));
     }
 
     public static void banner() {
@@ -44,6 +47,7 @@ public final class Console {
         System.out.println("  list-log-metrics            | Lists of log metrics");
         System.out.println("  new-log-metrics             | Creates a log metrics");
         System.out.println("  delete-log-metrics          | Deletes a log metrics");
+        System.out.println("  list-alert-policies         | Lists all the alert policies");
         System.out.println("  exit                        | Exit from console");
         System.out.println();
     }
@@ -120,6 +124,13 @@ public final class Console {
                     throw new IllegalArgumentException("usage: <type>");
                 }
                 metricService.deleteLogMetrics(args[1]);
+                break;
+            case "list-alert-policies":
+                args = commandLine.split("\\s+", 2);
+                if (args.length != 1) {
+                    throw new IllegalArgumentException("usage: no arguments");
+                }
+                alertService.readAllAlertPolicies();
                 break;
             case "exit":
                 System.out.println("exiting...");

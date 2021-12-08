@@ -19,7 +19,7 @@ public class ConsoleRunner {
         Console.usage();
         while (true) {
             System.out.print("GCP Metrics > ");
-            String line = scanner.next();
+            String line = scanner.nextLine();
             if (line.trim().isEmpty()) {
                 break;
             }
