@@ -1,6 +1,6 @@
 # GCP - METRIC CONSOLE
 
-Java console for create metrics and logging metrics dynamically on Google Cloud Platform
+Java CLI for create metrics and logging metrics dynamically on Google Cloud Platform
 
 
 #### SETUP
